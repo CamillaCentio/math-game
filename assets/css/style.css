@@ -1,5 +1,5 @@
 body {
-    background-color: #f1f1f1;
+    background-color: #c6f4f7;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -24,24 +24,73 @@ body {
     align-items: center;
     flex-wrap: wrap;
     max-width: 1200px; 
+    height: 950px;
     justify-content: space-between;
     margin: 0 auto;
 }
 
 .info-box {
     background-color: #a5f4be;
+    border-radius: 15px;
+    margin: auto;
     padding: 20px;
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /** Game area **/
 
 .board {
     background-color: #a5f4be;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
+    max-width: 830px;
+    max-height: 650px;
+    width: 65%;
+    height: 50%;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.questions {
+    font-size: 1,5rem;
+    margin: auto;
+    text-align: center;
+    text-align: center;
+}
+
+.questions span {
+    color: #333;
+    text-align: center;
+}
+
+.score-board {
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/** Buttons **/
+
+.operation-buttons button {
+    background-color: #849df0;
+    border: none;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 10px;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.operation-buttons button:hover {
+    background-color: #f3f4ad;
+    cursor: pointer;
+}
+
+.questions {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 15px;
 }

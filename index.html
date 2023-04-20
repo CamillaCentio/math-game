@@ -28,20 +28,22 @@
                 <button class="multiplication" oneclick="startGame ('mul')"><i class="fa-solid fa-times"></i><br>Multiplication</button>
                 <button class="division" oneclick="startGame ('div')"><i class="fa-solid fa-divide"></i><br>Division</button>
             </div>
-            <div class="question">
+            <div class="questions">
                 <span id="operand1"></span>
                 <span id="operator"></span>
                 <span id="operand2"></span>
-                <span id="equals">=</span>
                 <p class="answer">Enter your Answer here:</p>
                 <input type="answer-box" type="number">
             </div>
-          
+            
+            <button class="submit">Submit Answer</button>
            <div class="score-board">
             <p>Your score: <span id="score">0</span></p>
+            <p class="scores">Correct Answers <span id="score">0</span></p>
+            <p class="scores">Wrong Answers <span id="incorrect">0</span></p>
+
+            <button class="restart-button" onclick="restartGame()">Restart <i class="fa-solid fa-rotate-left"></i></button>
            </div>
-            
-           <button class="restart-button" onclick="restartGame()">Restart <i class="fa-solid fa-rotate-left"></i></button>
         </div>
     </div>
     
