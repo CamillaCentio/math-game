@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Easy maths game for kids 3-6 years">
-    <meta name="keywords" content="maths, game, kids, 3-6, easy">
+    <meta name="keywords" content="maths, game, kids, 3-7, easy">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/11bd85d3dc.js" crossorigin="anonymous"></script>
 
     <title>Math game!</title>
 </head>
@@ -15,13 +16,16 @@
     <div class="containe">
         <div class="info-box">
             <h1 class="how-to-play">How to play</h1>
-            <p>Easy maths game for kids 3-6 years. You can practice very easy math </p>
-            <h2>To start the game you just have to choose a operation below and get right in to it.</h2>
+            <p>Easy maths game for kids 3-7 years. You can practice very easy math </p>
+            <h5>To start the game you just have to choose a operation below and get right in to it.</h2>
         </div>
         <div class="board">
             <h1>Let's start and good luck</h1>
             <div class="operation-buttons">
-                <button data-type="addition" class="btn btn--big btn--pink">
+                <button class="addition" oneclick="startGame ('add')"><i class="fa-solid fa-plus"></i><br>Addition</button>
+                <button class="subtraction" oneclick="startGame ('sub')"><i class="fa-solid fa-minus"></i><br>Subtraction</button>
+                <button class="multiplication" oneclick="startGame ('mul')"><i class="fa-solid fa-times"></i><br>Multiplication</button>
+                <button class="division" oneclick="startGame ('div')"><i class="fa-solid fa-divide"></i><br>Division</button>
             </div>
         </div>
     </div>
