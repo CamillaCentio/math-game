@@ -17,6 +17,7 @@ body {
     text-align: center;
 }
 
+/** Info section **/
 
 .container {
     background-color: #40fa7b;
@@ -36,6 +37,7 @@ body {
     padding: 20px;
     width: 50%;
     max-width: 600px;
+    text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,9 +47,9 @@ body {
     background-color: #a5f4be;
     border-radius: 15px;
     max-width: 830px;
-    max-height: 650px;
+    max-height: 550px;
     width: 65%;
-    height: 50%;
+    height: 100%;
     padding: 10px;
     margin: auto;
     text-align: center;
@@ -95,8 +97,17 @@ body {
     margin-top: 15px;
 }
 
-#operand1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    margin-top: 15px;
+.score-board {
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/** Footer **/
+
+.footer {
+    background-color: #d3acf2;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
 }
