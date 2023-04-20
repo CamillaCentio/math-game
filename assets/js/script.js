@@ -25,6 +25,7 @@ function runGame(operation) {
     document.getElementById("answer-box").value = "";
     document.getElementById("answer-box").focus();
 }
+
 /** Generates a question with two random numbers */
 function generateQuestion() {
     let num1 = Math.floor(Math.random() * 10) + 1;
