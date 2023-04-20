@@ -10,25 +10,43 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/11bd85d3dc.js" crossorigin="anonymous"></script>
 
-    <title>Math game!</title>
+    <title>Kids Math game!</title>
 </head>
 <body>
-    <div class="containe">
+    <h1 class="header">Easy Math Game for kids</h1>
+    <div class="container">
         <div class="info-box">
-            <h1 class="how-to-play">How to play</h1>
+            <h2 class="how-to-play">How to play</h2>
             <p>Easy maths game for kids 3-7 years. You can practice very easy math </p>
             <h5>To start the game you just have to choose a operation below and get right in to it.</h2>
         </div>
         <div class="board">
-            <h1>Let's start and good luck</h1>
+            <h1><i class="fa-solid fa-star"></i> Let's start and good luck <i class="fa-solid fa-star"></i></h1>
             <div class="operation-buttons">
                 <button class="addition" oneclick="startGame ('add')"><i class="fa-solid fa-plus"></i><br>Addition</button>
                 <button class="subtraction" oneclick="startGame ('sub')"><i class="fa-solid fa-minus"></i><br>Subtraction</button>
                 <button class="multiplication" oneclick="startGame ('mul')"><i class="fa-solid fa-times"></i><br>Multiplication</button>
                 <button class="division" oneclick="startGame ('div')"><i class="fa-solid fa-divide"></i><br>Division</button>
             </div>
+            <div class="question">
+                <span id="operand1"></span>
+                <span id="operator"></span>
+                <span id="operand2"></span>
+                <span id="equals">=</span>
+                <p class="answer">Enter your Answer here:</p>
+                <input type="answer-box" type="number">
+            </div>
+          
+           <div class="score-board">
+            <p>Your score: <span id="score">0</span></p>
+           </div>
+            
+           <button class="restart-button" onclick="restartGame()">Restart <i class="fa-solid fa-rotate-left"></i></button>
         </div>
     </div>
     
+    <footer class="footer">
+        <p>Created and designed by <a href="https://github.com/CamillaCentio" target="_blank">Camilla Centio, 2023</a></p>
+    </footer>
 </body>
 </html>
