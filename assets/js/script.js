@@ -21,9 +21,11 @@ function startGame(operation) {
 }
 
 function runGame(operation) {
-    startGame(operation);
+    if (operation) {
+        startGame(operation);
     document.getElementById("answer-box").value = "";
     document.getElementById("answer-box").focus();
+    }
 }
 
 /** Generates a question with two random numbers */
@@ -51,15 +53,26 @@ function checkAnswer(answer) {
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
-        alert("That was right, good work");
+        correctAnswerElement.style.display = "none";
         incrementScore();
     } else {
-        alert(`Sorry, that was not correct, the correct answer was: ${calculatedAnswer[0]}!`);
+        correctAnswerElement.textContent = `Sorry, that was not correct, the correct answer was: ${calculatedAnswer[0]}!`;
         incrementWrongAnswer();
     }
 
-    runGame(currentOperation[1]);
+    if (currentOperation) {
+        runGame(currentOperation[1]);
+    }
+    
 }
+
+function restartGame() {
+    document.getElementById("score").innerText = "0";
+    document.getElementById("incorrect").innerText = "0";
+}
+    if (currentOperation) {
+        runGame(currentOperation);
+    }
 
 function calculateCorrectAnswer() {
     let operand1 = parseInt(document.getElementById("operand1").innerText);
@@ -113,8 +126,3 @@ function displayDivisionQuestion(operand1, operand2) {
     document.getElementById("operand2").textContent = operand2;
     document.getElementById("operator").textContent = "/";
 }
-
-
-
-
-
