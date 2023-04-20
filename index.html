@@ -1,59 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Easy maths game for kids 3-7 years">
-    <meta name="keywords" content="maths, game, kids, 3-7, easy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Easy maths game for kids 3-6 years" />
+    <meta name="keywords" content="maths, game, kids, 3-7, easy" />
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://kit.fontawesome.com/11bd85d3dc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://kit.fontawesome.com/11bd85d3dc.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>Kids Math game!</title>
-</head>
-<body>
-    <h1 class="header">Easy Math Game for kids</h1>
-    <div class="container">
-        <div class="info-box">
-            <h2 class="how-to-play">How to play</h2>
-            <p>Easy maths game for kids 3-7 years. Here you will learn addition, subtraction, multiplication and division. 
-                For every correct answer you will get 1 point. 
-            </p>
-            <h3>To start the game you just have to choose a operation below and get right in to it and good luck!</h3>
-        </div>
-        <div class="board">
-            <h1><i class="fa-solid fa-star"></i> Let's start and good luck <i class="fa-solid fa-star"></i></h1>
-            <div class="operation-buttons">
-                <button data-type="addition" onclick="startGame ('addition')"><i class="fa-solid fa-plus"></i><br>Addition</button>
-                <button data-type="subtraction" onclick="startGame ('subtract')"><i class="fa-solid fa-minus"></i><br>Subtraction</button>
-                <button data-type="multiplication" onclick="startGame ('multiplication')"><i class="fa-solid fa-times"></i><br>Multiplication</button>
-                <button data-type="division" onclick="startGame ('division')"><i class="fa-solid fa-divide"></i><br>Division</button>
-            </div>
-            <div class="questions">
-                <span id="operand1">0</span>
-                <span id="operator">x</span>
-                <span id="operand2">0</span>
-                <span id="equals">=</span>
-                <p class="answer">Enter your Answer here:</p>
-                <input id="answer-box" type="number">
-            </div>
+  </head>
 
-            <button class="submit">Submit Answer</button>
-            <div class="score-container">
-           <div class="score-board">
-            <p>Your score: <span id="score">0</span></p>
-            <p class="scores">Correct Answers <span id="score">0</span></p>
-            <p class="scores">Wrong Answers <span id="incorrect">0</span></p>
-
-            <button class="restart-button" onclick="restartGame()">Restart <i class="fa-solid fa-rotate-left"></i></button>
-           </div>
-        </div>
+  <body>
+  <h1 class="header">Easy Math Game for kids</h1>
+  <div class="container">
+    <div class="info-box">
+      <h2 class="how-to-play">How to play</h2>
+      <p>
+        Easy maths game for kids 3-7 years. Here you will learn addition,
+        subtraction, multiplication and division. For every correct answer you
+        will get 1 point.
+      </p>
+      <h3>
+        To start the game you just have to choose a operation below and get
+        right in to it.
+      </h3>
     </div>
-    
-    <footer class="footer">
-        <p>Created and designed by <a href="https://github.com/CamillaCentio" target="_blank">Camilla Centio, 2023</a></p>
-    </footer>
-    <script src="assets/js/script.js"></script>
+    <div class="board">
+      <h1>
+        <i class="fa-solid fa-star"></i> Let's start and good luck
+        <i class="fa-solid fa-star"></i>
+      </h1>
+      <div class="operation-buttons">
+        <button data-type="addition" onclick="startGame ('addition')">
+          <i class="fa-solid fa-plus"></i><br />Addition
+        </button>
+        <button data-type="subtraction" onclick="startGame ('subtraction')">
+          <i class="fa-solid fa-minus"></i><br />Subtraction
+        </button>
+        <button data-type="multiplication" onclick="startGame ('multiplication')">
+          <i class="fa-solid fa-times"></i><br />Multiplication
+        </button>
+        <button data-type="division" onclick="startGame ('division')">
+          <i class="fa-solid fa-divide"></i><br />Division
+        </button>
+      </div>
+      <div class="questions">
+        <span id="operand1">0</span>
+        <span id="operator">x</span>
+        <span id="operand2">0</span>
+        <span id="equals">=</span>
+        <p class="answer">Enter your Answer here:</p>
+        <input id="answer-box" type="number" />
+      </div>
+
+      <button class="submit" data-type="submit">Submit Answer</button>
+      <p id="correct-answer" style="display: none;"></p>
+      <div id="message-container" style="display: none;"></div>
+      <div class="score-container">
+        <div class="score-board">
+          <p>Your score: <span id="total-score">0</span></p>
+          <p class="scores">Correct Answers <span id="score">0</span></p>
+          <p class="scores">Wrong Answers <span id="incorrect">0</span></p>
+          <button class="restart-button" onclick="restartGame()">Restart <i
+              class="fa-solid fa-rotate-left"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer class="footer">
+    <p>
+      Created and designed by
+      <a href="https://github.com/CamillaCentio" target="_blank">Camilla Centio, 2023</a>
+    </p>
+  </footer>
+  <script src="assets/js/script.js"></script>
 </body>
-</html>

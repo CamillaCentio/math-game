@@ -23,11 +23,10 @@ function startGame(operation) {
 function runGame(operation) {
     if (operation) {
         startGame(operation);
-    document.getElementById("answer-box").value = "";
-    document.getElementById("answer-box").focus();
+        document.getElementById("answer-box").value = "";
+        document.getElementById("answer-box").focus();
     }
 }
-
 /** Generates a question with two random numbers */
 function generateQuestion() {
     let num1 = Math.floor(Math.random() * 10) + 1;
@@ -47,32 +46,50 @@ function generateQuestion() {
     }
 }
 
-function checkAnswer(answer) {
+function checkAnswer() {
     let userAnswer = parseInt(document.getElementById("answer-box").value);
     let calculatedAnswer = calculateCorrectAnswer();
     let isCorrect = userAnswer === calculatedAnswer[0];
 
-    if (isCorrect) {
-        correctAnswerElement.style.display = "none";
-        incrementScore();
-    } else {
-        correctAnswerElement.textContent = `Sorry, that was not correct, the correct answer was: ${calculatedAnswer[0]}!`;
-        incrementWrongAnswer();
+    let correctAnswerElement = document.getElementById("correct-answer");
+    let messageElement = document.getElementById("message-container");
+
+    if (correctAnswerElement && messageElement) {
+        if (isCorrect) {
+            correctAnswerElement.style.display = "none";
+            incrementScore();
+            document.getElementById("answer-box").value = "";
+            document.getElementById("answer-box").focus();
+
+            messageElement.innerText = "Congratulations, you got it right!";
+            messageElement.style.color = "green";
+            messageElement.style.display = "block";
+        } else {
+            correctAnswerElement.textContent = `Sorry, that was not correct. The correct answer was: ${calculatedAnswer[0]}!`;
+            correctAnswerElement.style.display = "block";
+            incrementWrongAnswer();
+        }
     }
 
     if (currentOperation) {
-        runGame(currentOperation[1]);
+        runGame(calculatedAnswer[1]);
     }
-    
 }
+
+
+
+
+
 
 function restartGame() {
     document.getElementById("score").innerText = "0";
     document.getElementById("incorrect").innerText = "0";
-}
+
     if (currentOperation) {
         runGame(currentOperation);
     }
+}
+
 
 function calculateCorrectAnswer() {
     let operand1 = parseInt(document.getElementById("operand1").innerText);
@@ -84,24 +101,32 @@ function calculateCorrectAnswer() {
     } else if (operator === "x") {
         return [operand1 * operand2, "multiplication"];
     } else if (operator === "-") {
-        return [operand1 - operand2, "subtract"];
+        return [operand1 - operand2, "subtraction"];
     } else if (operator === "/") {
-        return [operand1 / operand2, "divide"];
+        return [operand1 / operand2, "division"];
     } else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. aborting!`;
     }
 }
 
+
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
+    let scoreElement = document.getElementById("score");
+    if (scoreElement) {
+        let oldScore = parseInt(scoreElement.innerText);
+        scoreElement.innerText = ++oldScore;
+    }
 }
 
 function incrementWrongAnswer() {
-    let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++oldScore;
+    let incorrectElement = document.getElementById("incorrect");
+    if (incorrectElement) {
+        let oldScore = parseInt(incorrectElement.innerText);
+        incorrectElement.innerText = ++oldScore;
+    }
 }
+
 
 function displayAdditionQuestion(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
