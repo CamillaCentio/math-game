@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://camillacentio.github.io/math-games-for-children/index.html" target="_blank">
-    <img src="assets/images/logo.jpg" alt="Logo" width="250" height="100">
+    <img src="(![Alt text](assets/images/fav_icon.jpg)" alt="Logo" width="250" height="100">
   </a>
 
   <h3 align="center">Project 2 - Easy math game for kids</h3>
@@ -55,7 +55,9 @@ The game is fully responsive and works well on different devices, such as phones
 ## Bugs & Fixes 🪲
 
 * Sometimes the questions are too difficult on division, probably a problem in the code. **(Bug not solved)**
+* Score board is outside the container. **(Bug not solved)**
 * No other bugs where found while testing the game.
+
 
 ## Testing 📝 
 
