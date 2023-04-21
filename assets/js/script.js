@@ -4,20 +4,26 @@ let score = 0;
 
 let buttons = document.getElementsByTagName("button");
 for (let button of buttons) {
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
         if (this.getAttribute("data-type") === "submit") {
             checkAnswer();
         } else {
             let gameType = this.getAttribute("data-type");
             runGame(gameType);
         }
-    }); 
+    });
 }
 
 /** This function makes it possible to press any of the four buttons to start the game */
 function startGame(operation) {
     currentOperation = operation;
     generateQuestion();
+
+    // hide the message element
+    document.getElementById("correct-answer").style.display = "none";
+
+    // reset the incorrect count
+    document.getElementById("incorrect").textContent = "0";
 }
 
 function runGame(operation) {
@@ -44,46 +50,41 @@ function generateQuestion() {
         alert(`Unknown game type ${currentOperation}`);
         throw `Unknown game type ${currentOperation}. Aborting!`;
     }
+
+    // hide the message element
+    document.getElementById("correct-answer").style.display = "none";
 }
 
 function checkAnswer() {
     let userAnswer = parseInt(document.getElementById("answer-box").value);
     let calculatedAnswer = calculateCorrectAnswer();
     let isCorrect = userAnswer === calculatedAnswer[0];
-
     let correctAnswerElement = document.getElementById("correct-answer");
-    let messageElement = document.getElementById("message-container");
+    let messageContainer = document.getElementById("message-container");
 
-    if (correctAnswerElement && messageElement) {
-        if (isCorrect) {
-            correctAnswerElement.style.display = "none";
-            incrementScore();
-            document.getElementById("answer-box").value = "";
-            document.getElementById("answer-box").focus();
-
-            messageElement.innerText = "Congratulations, you got it right!";
-            messageElement.style.color = "green";
-            messageElement.style.display = "block";
-        } else {
-            correctAnswerElement.textContent = `Sorry, that was not correct. The correct answer was: ${calculatedAnswer[0]}!`;
-            correctAnswerElement.style.display = "block";
-            incrementWrongAnswer();
-        }
+    if (isCorrect) {
+        incrementScore();
+        messageContainer.innerHTML = "<p class='correct-message'>Correct!</p>";
+    } else {
+        incrementWrongAnswer();
+        messageContainer.innerHTML = `<p class='incorrect-message'>Sorry, that was not correct. The correct answer was: ${calculatedAnswer[0]}!</p>`;
     }
+
+    messageContainer.style.display = "block";
 
     if (currentOperation) {
         runGame(calculatedAnswer[1]);
+        document.getElementById("answer-box").value = "";
+        document.getElementById("answer-box").focus();
     }
 }
-
-
-
 
 
 
 function restartGame() {
     document.getElementById("score").innerText = "0";
     document.getElementById("incorrect").innerText = "0";
+    document.getElementById("message-container").style.display = "none";
 
     if (currentOperation) {
         runGame(currentOperation);
