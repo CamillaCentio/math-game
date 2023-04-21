@@ -57,7 +57,7 @@ The game is fully responsive and works well on different devices, such as phones
 ## Bugs & Fixes 🪲
 
 * Sometimes the questions are too difficult on division, probably a problem in the code. **(Bug not solved)**
-* Score board is outside the container. **(Bug not solved)**
+* Score board is outside the container. **(Bug solved)**
 * No other bugs where found while testing the game.
 
 
